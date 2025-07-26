@@ -7,30 +7,35 @@ This MCP server connects AI assistants with live weather data, enabling them to 
 ## Features
 
 ### Tools
-- `fetch-weather` - Get current weather conditions for any city
-  - Real-time temperature, humidity, wind, and atmospheric data
-  - Air quality information included
-  - Detailed weather descriptions
 
-- `fetch-weather-forecast` - Get weather forecasts up to 10 days ahead
-  - Daily high/low temperatures
-  - Precipitation chances and weather conditions
-  - Wind speeds and humidity levels
-  - Weather alerts and warnings when available
+-   `fetch-weather` - Get current weather conditions for any city
+
+    -   Real-time temperature, humidity, wind, and atmospheric data
+    -   Air quality information included
+    -   Detailed weather descriptions
+
+-   `fetch-weather-forecast` - Get weather forecasts up to 10 days ahead
+    -   Daily high/low temperatures
+    -   Precipitation chances and weather conditions
+    -   Wind speeds and humidity levels
+    -   Weather alerts and warnings when available
 
 ## Development
 
 Install dependencies:
+
 ```bash
 npm install
 ```
 
 Build the server:
+
 ```bash
 npm run build
 ```
 
 For development with auto-rebuild:
+
 ```bash
 npm run watch
 ```
@@ -44,15 +49,15 @@ On Windows: `%APPDATA%/Claude/claude_desktop_config.json`
 
 ```json
 {
-  "mcpServers": {
-    "Weather-mcp": {
-      "env": {
-        "WEATHER_API_KEY": "xxx"
-      },
-      "command": "node",
-      "args": ["/Users/dongjiewu/project/allmcpserver/mcp-weather/build/index.js"]
-    }
-  }
+	"mcpServers": {
+		"Weather-mcp": {
+			"env": {
+				"WEATHER_API_KEY": "xxx"
+			},
+			"command": "node",
+			"args": ["/your/path/to/mcp-weather/build/index.js"]
+		}
+	}
 }
 ```
 
