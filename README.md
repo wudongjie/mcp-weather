@@ -45,11 +45,12 @@ On Windows: `%APPDATA%/Claude/claude_desktop_config.json`
 ```json
 {
   "mcpServers": {
-    "weather": {
-      "command": "/path/to/mcp-weather/build/index.js",
+    "Weather-mcp": {
       "env": {
-        "WEATHER_API_KEY": "your-weather-api-key"
-      }
+        "WEATHER_API_KEY": "xxx"
+      },
+      "command": "node",
+      "args": ["/Users/dongjiewu/project/allmcpserver/mcp-weather/build/index.js"]
     }
   }
 }
