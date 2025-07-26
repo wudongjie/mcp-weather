@@ -1,7 +1,7 @@
 {
-  "name": "sample-mcp-server",
+  "name": "Weather MCP",
   "version": "0.1.0",
-  "description": "A Model Context Protocol server",
+  "description": "A Model Context Protocol server for real-time weather data",
   "private": true,
   "type": "module",
   "bin": {
