@@ -1,29 +1,22 @@
-# sample-mcp-server MCP Server
+# Weather MCP Server
 
-A Model Context Protocol server
+A Model Context Protocol server that provides real-time weather information and forecasts.
 
-This is a TypeScript-based MCP server that implements a simple notes system. It demonstrates core MCP concepts by providing:
-
-- Resources representing text notes with URIs and metadata
-- Tools for creating new notes
-- Prompts for generating summaries of notes
+This MCP server connects AI assistants with live weather data, enabling them to provide current weather conditions and multi-day forecasts for any location worldwide.
 
 ## Features
 
-### Resources
-- List and access notes via `note://` URIs
-- Each note has a title, content and metadata
-- Plain text mime type for simple content access
-
 ### Tools
-- `create_note` - Create new text notes
-  - Takes title and content as required parameters
-  - Stores note in server state
+- `fetch-weather` - Get current weather conditions for any city
+  - Real-time temperature, humidity, wind, and atmospheric data
+  - Air quality information included
+  - Detailed weather descriptions
 
-### Prompts
-- `summarize_notes` - Generate a summary of all stored notes
-  - Includes all note contents as embedded resources
-  - Returns structured prompt for LLM summarization
+- `fetch-weather-forecast` - Get weather forecasts up to 10 days ahead
+  - Daily high/low temperatures
+  - Precipitation chances and weather conditions
+  - Wind speeds and humidity levels
+  - Weather alerts and warnings when available
 
 ## Development
 
@@ -52,12 +45,17 @@ On Windows: `%APPDATA%/Claude/claude_desktop_config.json`
 ```json
 {
   "mcpServers": {
-    "sample-mcp-server": {
-      "command": "/path/to/sample-mcp-server/build/index.js"
+    "weather": {
+      "command": "/path/to/mcp-weather/build/index.js",
+      "env": {
+        "WEATHER_API_KEY": "your-weather-api-key"
+      }
     }
   }
 }
 ```
+
+You'll need to obtain a free API key from [WeatherAPI.com](https://www.weatherapi.com/) and set it in your environment configuration.
 
 ### Debugging
 
